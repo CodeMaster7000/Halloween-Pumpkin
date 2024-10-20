@@ -1,0 +1,195 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--orange: #ec7522;
+	--orange-dark: #8a3902;
+	--orange-light: #f78d37;
+	--brown: #7a4521;
+	--brown-dark: #442610;
+	--dark: #241915;
+	--bg: #000;
+}
+body {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--bg);
+}
+.pumpkin {
+	width: 140px;
+	height: 250px;
+	background: var(--orange);
+	border-radius: 40% 40% 45% 45%;
+	position: relative;
+	box-shadow:
+    /* lines center */ 6px 0 1px var(--orange-dark),
+		-6px 0 1px var(--orange-dark), /* second slice */ 50px -5px 1px var(--orange),
+		-50px -5px 1px var(--orange), 56px -5px 1px var(--orange-dark),
+		-56px -5px 1px var(--orange-dark),
+		/* third slice */ 90px -20px 1px var(--orange), -90px -20px 1px var(--orange),
+		96px -20px 1px var(--orange-dark), -96px -20px 1px var(--orange-dark),
+		/* back slice */ 0 -20px 1px var(--orange), 7px -20px 1px var(--orange),
+		-7px -20px 1px var(--orange), 15px -20px 1px var(--orange-dark),
+		-15px -20px 1px var(--orange-dark);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.pumpkin::before {
+	content: "";
+	position: absolute;
+	top: -75px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 70px;
+	height: 80px;
+	background: var(--brown);
+	clip-path: polygon(
+		50% 0%,
+		63% 37%,
+		66% 58%,
+		53% 78%,
+		65% 88%,
+		44% 97%,
+		20% 90%,
+		33% 68%,
+		26% 50%,
+		41% 30%
+	);
+	box-shadow: inset 0px 0px 21px #000, inset 5px 5px 40px var(--brown-dark);
+}
+.eye {
+	width: 60px;
+	height: 60px;
+	background: var(--dark);
+	margin-top: 44px;
+}
+
+.l {
+	border-radius: 0% 100% 22% 78% / 32% 100% 0% 68%;
+	box-shadow: inset 5px -5px 2px var(--orange-light);
+}
+
+.d {
+	border-radius: 100% 0% 71% 29% / 100% 39% 61% 0%;
+	box-shadow: inset -5px -5px 2px var(--orange-light);
+}
+
+.mouth {
+	position: absolute;
+	width: 250px;
+	height: 280px;
+	background: transparent;
+	border-radius: 100%;
+	bottom: 40px;
+	left: -39%;
+	border-bottom: 40px solid var(--dark);
+}
+
+.mouth::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	bottom: -40px;
+	left: 0;
+	border-radius: 50%;
+	background: transparent;
+	border-bottom: 12px solid var(--orange-light);
+}
+
+/* nose */
+.mouth::after {
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 30px;
+	bottom: 20px;
+	left: 47%;
+	background: var(--dark);
+	clip-path: polygon(0 100%, 50% 0, 100% 100%);
+	box-shadow: inset 5px -5px 2px var(--orange-light);
+}
+
+.teeth {
+	position: absolute;
+	left: 22%;
+	bottom: -5px;
+	width: 15px;
+	height: 25px;
+	background: var(--orange);
+	clip-path: polygon(0 0, 50% 100%, 100% 0);
+}
+
+.t-2 {
+	left: 30%;
+	bottom: -9px;
+}
+
+.t-3 {
+	left: 37%;
+	bottom: -7px;
+}
+
+.t-4 {
+	left: 60%;
+	bottom: -10px;
+}
+
+.t-5 {
+	left: 66%;
+	bottom: -5px;
+}
+
+.t-6 {
+	left: 72%;
+	bottom: -5px;
+}
+
+.t-bottom {
+	left: 22%;
+	bottom: -5px;
+	width: 15px;
+	height: 26px;
+	clip-path: polygon(0 100%, 50% 0, 100% 100%);
+}
+
+.t-7 {
+	left: 27%;
+	bottom: -30px;
+}
+
+.t-8 {
+	left: 65%;
+	bottom: -35px;
+}
+
+.light {
+	width: 360px;
+	height: 360px;
+	border-radius: 50%;
+	background: var(--orange-light);
+	position: absolute;
+	filter: blur(150px);
+	animation: light 0.75s ease-in-out infinite alternate;
+}
+@keyframes light {
+	to {
+		scale: 0.35;
+	}
+}
+.text {
+	position: absolute;
+	font-size: 80px;
+	color: var(--orange);
+	bottom: 20px;
+	transform-origin: center;
+	font-family: "Creepster", cursive;
+	letter-spacing: 21px;
+	margin: 0 auto;
+	-webkit-text-stroke: 2px #fff;
+}
