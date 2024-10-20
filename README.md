@@ -1,3 +1,3 @@
 # Halloween Pumpkin
 
-An animated CSS pumpkin to celebrate All Hallows’ Eve.
+An animated pure CSS pumpkin to celebrate All Hallows’ Eve.
